@@ -1,6 +1,6 @@
-const dashboard = angular.module('totalReceivables', ['ideUI', 'ideView']);
+const dashboard = angular.module('total-receivables', ['ideUI', 'ideView']);
 
-dashboard.controller('InvoiceWidgetsController', ['$scope', '$document', '$http', 'messageHub', function ($scope, $document, $http, messageHub) {
+dashboard.controller('totalReceivablesController', ['$scope', '$document', '$http', 'messageHub', function ($scope, $document, $http, messageHub) {
     $scope.state = {
         isBusy: true,
         error: false,

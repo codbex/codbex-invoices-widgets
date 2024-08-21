@@ -1,38 +1,15 @@
 const dashboard = angular.module('gross-profit', ['ideUI', 'ideView']);
 
-dashboard.controller('Gross-Profit-Controller', ['$scope', '$document', '$http', 'messageHub', function ($scope, $document, $http, messageHub) {
+dashboard.controller('grossProfitController', ['$scope', '$document', '$http', 'messageHub', function ($scope, $document, $http, messageHub) {
     $scope.state = {
         isBusy: true,
         error: false,
         busyText: "Loading...",
     };
 
-    $scope.openPerspective = function (perspective) {
-        if (perspective === 'sales-orders') {
-            messageHub.postMessage('launchpad.switch.perspective', { perspectiveId: 'sales-orders' }, true);
-        } else if (perspective === 'products') {
-            messageHub.postMessage('launchpad.switch.perspective', { perspectiveId: 'products' }, true);
-        } else if (perspective === 'sales-invoices') {
-            messageHub.postMessage('launchpad.switch.perspective', { perspectiveId: 'sales-invoices' }, true);
-        }
-        ;
-    }
-
+    debugger
     $scope.today = new Date();
 
-    const invoiceServiceUrl = "/services/ts/codbex-hestia/api/InvoiceService.ts/invoiceData";
-    $http.get(invoiceServiceUrl)
-        .then(function (response) {
-            $scope.InvoiceData = response.data;
-            calculateGrossProfit();
-        });
-
-    const orderServiceUrl = "/services/ts/codbex-hestia/api/OrderService.ts/orderData";
-    $http.get(orderServiceUrl)
-        .then(function (response) {
-            $scope.OrderData = response.data;
-            calculateGrossProfit();
-        });
 
     const productServiceUrl = "/services/ts/codbex-hestia/api/ProductService.ts/productData";
     $http.get(productServiceUrl)

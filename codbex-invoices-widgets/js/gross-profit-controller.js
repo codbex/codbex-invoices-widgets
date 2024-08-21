@@ -1,6 +1,6 @@
 const grossProfitWidget = angular.module('gross-profit', ['ideUI', 'ideView']);
 
-grossProfitWidget.controller('Gross-Profit-Controller', ['$scope', '$http', function ($scope, $http) {
+grossProfitWidget.controller('grossProfitController', ['$scope', '$http', function ($scope, $http) {
     $scope.state = {
         isBusy: true,
         error: false,
