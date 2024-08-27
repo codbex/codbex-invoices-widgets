@@ -1,4 +1,4 @@
-const viewData = {
+const widgetData = {
     id: 'total-receivables-widget',
     label: 'Total Receivables Widget',
     link: '/services/web/codbex-invoices-widgets/subviews/total-receivables.html',
@@ -6,7 +6,7 @@ const viewData = {
 };
 
 if (typeof exports !== 'undefined') {
-    exports.getView = function () {
-        return viewData;
+    exports.getWidget = function () {
+        return widgetData;
     }
 }
