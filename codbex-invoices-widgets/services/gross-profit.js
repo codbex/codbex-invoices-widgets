@@ -2,7 +2,8 @@ const widgetData = {
     id: 'gross-profit-widget',
     label: 'Gross Profit Widget',
     link: '/services/web/codbex-invoices-widgets/subviews/gross-profit.html',
-    lazyLoad: true
+    lazyLoad: true,
+    order: 1
 };
 
 if (typeof exports !== 'undefined') {
