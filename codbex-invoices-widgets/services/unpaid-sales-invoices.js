@@ -6,6 +6,10 @@ const widgetData = {
     order: 5
 };
 
+export function getWidget() {
+    return widgetData;
+}
+
 if (typeof exports !== 'undefined') {
     exports.getWidgets = function () {
         return widgetData;
