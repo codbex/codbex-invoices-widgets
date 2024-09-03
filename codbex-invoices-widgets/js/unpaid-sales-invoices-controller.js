@@ -5,7 +5,16 @@ angular.module('gross-profit', ['ideUI', 'ideView'])
             error: false,
             busyText: "Loading...",
         };
-
+        $scope.openPerspective = function (perspective) {
+            if (perspective === 'sales-orders') {
+                messageHub.postMessage('launchpad.switch.perspective', { perspectiveId: 'sales-orders' }, true);
+            } else if (perspective === 'products') {
+                messageHub.postMessage('launchpad.switch.perspective', { perspectiveId: 'products' }, true);
+            } else if (perspective === 'sales-invoices') {
+                messageHub.postMessage('launchpad.switch.perspective', { perspectiveId: 'sales-invoices' }, true);
+            }
+            ;
+        }
         $scope.today = new Date();
 
 

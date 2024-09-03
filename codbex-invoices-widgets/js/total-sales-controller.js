@@ -6,6 +6,17 @@ angular.module('total-sales', ['ideUI', 'ideView'])
             busyText: "Loading...",
         };
 
+        $scope.openPerspective = function (perspective) {
+            if (perspective === 'sales-orders') {
+                messageHub.postMessage('launchpad.switch.perspective', { perspectiveId: 'sales-orders' }, true);
+            } else if (perspective === 'products') {
+                messageHub.postMessage('launchpad.switch.perspective', { perspectiveId: 'products' }, true);
+            } else if (perspective === 'sales-invoices') {
+                messageHub.postMessage('launchpad.switch.perspective', { perspectiveId: 'sales-invoices' }, true);
+            }
+            ;
+        }
+
 
         const invoiceServiceUrl = "/services/ts/codbex-hestia/api/InvoiceService.ts/invoiceData";
         $http.get(invoiceServiceUrl)
