@@ -1,5 +1,5 @@
 {
-    "extensionPoint": "portal-widgets",
+    "extensionPoint": "dashboard-widgets",
     "module": "codbex-invoices-widgets/services/gross-profit.js",
     "description": "Gross Profit Widget"
 }
